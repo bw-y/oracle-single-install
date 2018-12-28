@@ -16,7 +16,7 @@ IS_INSTANCE='1'
 #---------------------------------------------------------------------------------#
 #Global environment variable
 response='/home/oracle/response'
-MemTotle=`awk '($1 == "MemTotal:"){print $2/1048576}' /proc/meminfo`
+MemTotle=`awk '($1 == "MemTotal:"){printf ("%.0f\n",$2/1048576)}' /proc/meminfo`
 ORACLE_HOME='/data/app/oracle/product/12.2.0/db_1'
 con_name="
 sqlplus / as sysdba<< EOF
